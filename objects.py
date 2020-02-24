@@ -26,11 +26,9 @@ def display_products(products):
         print(product.name.title() + " " + product.cost)
 
 
-
 def display_product(product):
     print("Name: Cost:")
     print(product.name.title() + " " + product.cost)
-
 
 
 my_product = Product("alice in wonderland", "£10.00", "children's book")
@@ -41,3 +39,11 @@ books = [my_product, hobbit]
 #display_product(my_product)
 #display_product(hobbit)
 display_products(books)
+
+def take_purchase(product, qty):
+    new_order = Order(product.name, qty)
+
+
+
+first_order = take_purchase(my_product, 2)
+print(first_order)
