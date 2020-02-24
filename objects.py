@@ -19,3 +19,25 @@ class Order():
 
     def __str__(self):
         return f"Order: {self.qty} of {self.product_name}."
+
+def display_products(products):
+    print("Name: Cost:")
+    for product in products:
+        print(product.name.title() + " " + product.cost)
+
+
+
+def display_product(product):
+    print("Name: Cost:")
+    print(product.name.title() + " " + product.cost)
+
+
+
+my_product = Product("alice in wonderland", "£10.00", "children's book")
+hobbit = Product("the hobbit", "£9.99", "fantasy adventure")
+
+books = [my_product, hobbit]
+
+#display_product(my_product)
+#display_product(hobbit)
+display_products(books)
