@@ -40,9 +40,9 @@ books = [my_product, hobbit]
 #display_product(hobbit)
 display_products(books)
 
-def take_purchase(product, qty):
-    new_order = Order(product.name, qty)
-
+def take_purchase(product_instance, qty):
+    new_order = Order(product_instance.name, product_instance.cost, qty)
+    return new_order
 
 
 first_order = take_purchase(my_product, 2)
