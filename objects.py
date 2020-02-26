@@ -54,7 +54,7 @@ print(first_order)
 #display an order function
 def display_order(order):
     print("Product Name: Cost: Quantity:")
-    print(order.product_name.title() + " " + order.cost + " " + order.qty)
+    print(f"{order.product_name.title()} {order.cost} {order.qty}")
 
 #my_order = Order(f"{my_product.name.title()}", f"{my_product.cost}", "2")
 
