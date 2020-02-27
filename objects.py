@@ -20,19 +20,24 @@ class Order():
     def __str__(self):
         return f"Order: {self.qty} of {self.product_name}."
 
+    def total_cost(order):
+        """Calculate the total cost of the order from cost and quantity"""
+        total = (float(order.cost) * order.qty)
+        print(f"Your total cost is: £{total}")
+
 def display_products(products):
     print("Name: Cost:")
     for product in products:
-        print(product.name.title() + " " + product.cost)
+        print(f"{product.name.title()} {product.cost}")
 
 
 def display_product(product):
     print("Name: Cost:")
-    print(product.name.title() + " " + product.cost)
+    print(f"{product.name.title()} {product.cost}")
 
 
-my_product = Product("alice in wonderland", "£10.00", "children's book")
-hobbit = Product("the hobbit", "£9.99", "fantasy adventure")
+my_product = Product("alice in wonderland", "10.00", "children's book")
+hobbit = Product("the hobbit", "9.99", "fantasy adventure")
 
 books = [my_product, hobbit]
 
@@ -47,3 +52,6 @@ def take_purchase(product_instance, qty):
 
 first_order = take_purchase(my_product, 2)
 print(first_order)
+
+print("The total cost of my first order...")
+first_order.total_cost()
