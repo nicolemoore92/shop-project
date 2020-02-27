@@ -56,6 +56,9 @@ def display_order(order):
 
 #my_order = Order(f"{my_product.name.title()}", f"{my_product.cost}", "2")
 
+print("\nMy first order:\n")
+display_order(first_order)
+
 def display_orders(orders):
     """display many orders function"""
     print("Product Name: Cost: Quantity:")
