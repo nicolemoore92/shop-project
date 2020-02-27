@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 class Product():
     """Defining a product"""
     def __init__(self, name, cost, description):
@@ -19,21 +21,21 @@ class Order():
     def __str__(self):
         return f"Order: {self.qty} of {self.product_name}."
 
-    def total_cost(order):
+    def total_cost(self):
         """Calculate the total cost of the order from cost and quantity"""
-        total = (float(order.cost) * order.qty)
+        total = Decimal(self.cost) * self.qty
         print(f"Your total cost is: £{total}")
 
 def display_products(products):
     """Display many products function"""
     print("Name: Cost:")
     for product in products:
-        print(f"{product.name.title()} {product.cost}")
+        print(f"{product.name.title()} £{product.cost}")
 
 def display_product(product):
     """Display a product function"""
     print("Name: Cost:")
-    print(f"{product.name.title()} {product.cost}")
+    print(f"{product.name.title()} £{product.cost}")
 
 
 my_product = Product("alice in wonderland", "10.00", "children's book")
@@ -60,7 +62,7 @@ first_order.total_cost()
 def display_order(order):
     """display an order function"""
     print("Product Name: Cost: Quantity:")
-    print(f"{order.product_name.title()} {order.cost} {order.qty}")
+    print(f"{order.product_name.title()} £{order.cost} {order.qty}")
 
 #my_order = Order(f"{my_product.name.title()}", f"{my_product.cost}", "2")
 
@@ -71,10 +73,10 @@ def display_orders(orders):
     """display many orders function"""
     print("Product Name: Cost: Quantity:")
     for order in orders:
-        print(f"{order.product_name.title()} {order.cost} {order.qty}")
+        print(f"{order.product_name.title()} £{order.cost} {order.qty}")
 
-my_order = Order("the hobbit", "£9.99", "3")
-another_order = Order("alice in wonderland", "£10.00", "2")
+my_order = Order("the hobbit", "9.99", 3)
+another_order = Order("alice in wonderland", "10.00", 2)
 
 orders_list = [my_order, another_order]
 
@@ -82,3 +84,7 @@ display_order(my_order)
 display_order(another_order)
 
 display_orders(orders_list)
+
+print("\nTotal:\n")
+my_order.total_cost()
+another_order.total_cost()
