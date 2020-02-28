@@ -24,7 +24,7 @@ class Order():
     def total_cost(self):
         """Calculate the total cost of the order from cost and quantity"""
         total = Decimal(self.cost) * self.qty
-        print(f"Your total cost is: £{total}")
+        return total
 
 def display_products(products):
     """Display many products function"""
@@ -63,6 +63,8 @@ def display_order(order):
     """display an order function"""
     print("Product Name: Cost: Quantity:")
     print(f"{order.product_name.title()} £{order.cost} {order.qty}")
+    total = order.total_cost()
+    print(f"Your total cost is: £{total}")
 
 #my_order = Order(f"{my_product.name.title()}", f"{my_product.cost}", "2")
 
@@ -74,6 +76,8 @@ def display_orders(orders):
     print("Product Name: Cost: Quantity:")
     for order in orders:
         print(f"{order.product_name.title()} £{order.cost} {order.qty}")
+        total = order.total_cost()
+        print(f"Your total cost is: £{total}")
 
 my_order = Order("the hobbit", "9.99", 3)
 another_order = Order("alice in wonderland", "10.00", 2)
@@ -86,5 +90,5 @@ display_order(another_order)
 display_orders(orders_list)
 
 print("\nTotal:\n")
-my_order.total_cost()
-another_order.total_cost()
+print(f"£{my_order.total_cost()}")
+print(f"£{another_order.total_cost()}")
