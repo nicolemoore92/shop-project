@@ -38,8 +38,8 @@ def display_product(product):
     print(f"{product.name.title()} £{product.cost}")
 
 
-my_product = Product("alice in wonderland", "10.00", "children's book")
-hobbit = Product("the hobbit", "9.99", "fantasy adventure")
+my_product = Product("alice in wonderland", Decimal("10.00"), "children's book")
+hobbit = Product("the hobbit", Decimal("9.99"), "fantasy adventure")
 
 books = [my_product, hobbit]
 
@@ -79,8 +79,8 @@ def display_orders(orders):
         total = order.total_cost()
         print(f"Your total cost is: £{total}")
 
-my_order = Order("the hobbit", "9.99", 3)
-another_order = Order("alice in wonderland", "10.00", 2)
+my_order = Order("the hobbit", Decimal("9.99"), 3)
+another_order = Order("alice in wonderland", Decimal("10.00"), 2)
 
 orders_list = [my_order, another_order]
 
