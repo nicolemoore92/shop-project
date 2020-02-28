@@ -23,8 +23,7 @@ class Order():
 
     def total_cost(self):
         """Calculate the total cost of the order from cost and quantity"""
-        total = Decimal(self.cost) * self.qty
-        return total
+        return self.cost * self.qty
 
 def display_products(products):
     """Display many products function"""
