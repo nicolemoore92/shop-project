@@ -1,6 +1,6 @@
 from decimal import Decimal
-from Products import Product
-from Orders import Order
+from products import Product
+from orders import Order
 
 def display_products(products):
     """Display many products function"""
