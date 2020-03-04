@@ -81,8 +81,17 @@ def display_orders(orders):
 
 my_order = Order("the hobbit", Decimal("9.99"), 3)
 another_order = Order("alice in wonderland", Decimal("10.00"), 2)
+orders_list = [my_order, another_order, first_order]
 
-orders_list = [my_order, another_order]
+def save_orders_to_json(orders, filename = 'order_data.json'):
+    order_dicts = []
+    for order in orders:
+        order_dict = {'product name': order.product_name, 'cost': str(order.cost), 'quantity': order.qty}
+        order_dicts.append(order_dict)
+    with open(filename, 'w') as od:
+        json.dump(order_dicts, od, indent=1)
+
+save_orders_to_json(orders_list)
 
 display_order(my_order)
 display_order(another_order)
