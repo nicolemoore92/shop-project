@@ -1,1 +1,12 @@
-[{"name": "alice in wonderland", "cost": "10.00", "description": "children's book"}, {"name": "the hobbit", "cost": "9.99", "description": "fantasy adventure"}]
+[
+ {
+  "name": "alice in wonderland",
+  "cost": "10.00",
+  "description": "children's book"
+ },
+ {
+  "name": "the hobbit",
+  "cost": "9.99",
+  "description": "fantasy adventure"
+ }
+]
