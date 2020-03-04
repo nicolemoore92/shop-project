@@ -19,19 +19,17 @@ my_product = Product("alice in wonderland", Decimal("10.00"), "children's book")
 hobbit = Product("the hobbit", Decimal("9.99"), "fantasy adventure")
 books = [my_product, hobbit]
 
-def save_products_to_json(products):
+def save_products_to_json(products, filename = 'product_data.json'):
     product_dicts = []
     for product in products:
         product_dict = {'name': product.name, 'cost': str(product.cost), 'description': product.description}
         product_dicts.append(product_dict)
-    filename = 'product_data.json'
     with open(filename, 'w') as pd:
         json.dump(product_dicts,pd)
 
 save_products_to_json(books)
 
-def load_products_from_json():
-    filename = 'product_data.json'
+def load_products_from_json(filename = 'product_data.json'):
     with open(filename) as pdf:
         products_from_file = json.load(pdf)
     print(f"PRODUCTS {products_from_file}")
