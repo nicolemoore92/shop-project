@@ -1,6 +1,7 @@
 from decimal import Decimal
 from products import Product
 from orders import Order
+import json
 
 def display_products(products):
     """Display many products function"""
@@ -16,8 +17,33 @@ def display_product(product):
 
 my_product = Product("alice in wonderland", Decimal("10.00"), "children's book")
 hobbit = Product("the hobbit", Decimal("9.99"), "fantasy adventure")
-
 books = [my_product, hobbit]
+
+def save_products_to_json(products):
+    product_dicts = []
+    for product in products:
+        product_dict = {'name': product.name, 'cost': str(product.cost), 'description': product.description}
+        product_dicts.append(product_dict)
+    product_data = 'product_data.json'
+    with open(product_data, 'w') as pd:
+        json.dump(product_dicts,pd)
+
+save_products_to_json(books)
+
+def load_products_from_json():
+    product_data_file = 'product_data.json'
+    with open(product_data_file) as pdf:
+        products_from_file = json.load(pdf)
+    print(f"PRODUCTS {products_from_file}")
+    product_list = []
+    for product_dict in products_from_file:
+        product = Product(product_dict['name'], Decimal(product_dict['cost']), product_dict['description'])
+        product_list.append(product)
+    return product_list
+
+loaded_products = load_products_from_json()
+print("HERE ARE THE PRODUCTS")
+display_products(loaded_products)
 
 display_product(my_product)
 display_product(hobbit)
