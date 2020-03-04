@@ -31,8 +31,8 @@ def save_products_to_json(products):
 save_products_to_json(books)
 
 def load_products_from_json():
-    product_data_file = 'product_data.json'
-    with open(product_data_file) as pdf:
+    filename = 'product_data.json'
+    with open(filename) as pdf:
         products_from_file = json.load(pdf)
     print(f"PRODUCTS {products_from_file}")
     product_list = []
