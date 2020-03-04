@@ -24,8 +24,8 @@ def save_products_to_json(products):
     for product in products:
         product_dict = {'name': product.name, 'cost': str(product.cost), 'description': product.description}
         product_dicts.append(product_dict)
-    product_data = 'product_data.json'
-    with open(product_data, 'w') as pd:
+    filename = 'product_data.json'
+    with open(filename, 'w') as pd:
         json.dump(product_dicts,pd)
 
 save_products_to_json(books)
