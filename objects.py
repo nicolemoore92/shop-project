@@ -93,6 +93,19 @@ def save_orders_to_json(orders, filename = 'order_data.json'):
 
 save_orders_to_json(orders_list)
 
+def load_orders_from_json(filename = 'order_data.json'):
+    with open(filename) as odf:
+        orders_from_file = json.load(odf)
+        order_list = []
+        for order_dict in orders_from_file:
+            order = Order(order_dict['product name'],Decimal(order_dict['cost']),order_dict['quantity'])
+            order_list.append(order)
+        return order_list
+
+loaded_orders = load_orders_from_json()
+print("MY NEW ORDERS")
+display_orders(loaded_orders)
+
 display_order(my_order)
 display_order(another_order)
 
