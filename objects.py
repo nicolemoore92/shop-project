@@ -1,6 +1,7 @@
 from decimal import Decimal
 from products import Product
 from orders import Order
+from take_purchase import take_purchase
 import json
 
 if __name__ == '__main__':
@@ -49,11 +50,6 @@ if __name__ == '__main__':
     display_product(hobbit)
 
     display_products(books)
-
-def take_purchase(product_instance, qty):
-    """Take a purchase"""
-    new_order = Order(product_instance.name, product_instance.cost, qty)
-    return new_order
 
 if __name__ == "__main__":
 
