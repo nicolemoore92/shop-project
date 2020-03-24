@@ -12,7 +12,6 @@ if __name__ == '__main__':
         print("Name: Cost:")
         print(f"{product.name.title()} £{product.cost}")
 
-
     my_product = Product("alice in wonderland", Decimal("10.00"), "children's book")
     hobbit = Product("the hobbit", Decimal("9.99"), "fantasy adventure")
     books = [my_product, hobbit]

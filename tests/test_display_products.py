@@ -4,4 +4,5 @@ from products import Product
 
 class TestDisplayProducts(TestCase):
     def test_display_products(self):
+        product = Product('alice in wonderland', Decimal("10.00"), 'childrens book')
         self.assertEqual(1,1)
