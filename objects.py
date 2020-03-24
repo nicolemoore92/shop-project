@@ -2,15 +2,10 @@ from decimal import Decimal
 from products import Product
 from orders import Order
 from take_purchase import take_purchase
+from display_products import display_products
 import json
 
 if __name__ == '__main__':
-
-    def display_products(products):
-        """Display many products function"""
-        print("Name: Cost:")
-        for product in products:
-            print(f"{product.name.title()} £{product.cost}")
 
     def display_product(product):
         """Display a product function"""
