@@ -2,6 +2,7 @@ from products import Product
 
 def display_products(products):
     """Display many products function"""
-    print("Name: Cost:")
+    d_products = "Name: Cost: "
     for product in products:
-        print(f"{product.name.title()} £{product.cost}")
+        d_products += f"\n {product.name.title()} £{product.cost}"
+    return d_products

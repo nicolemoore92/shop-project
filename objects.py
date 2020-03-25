@@ -38,12 +38,12 @@ if __name__ == '__main__':
 
     loaded_products = load_products_from_json()
     print("HERE ARE THE PRODUCTS")
-    display_products(loaded_products)
+    print(display_products(loaded_products))
 
     display_product(my_product)
     display_product(hobbit)
 
-    display_products(books)
+    print(display_products(books))
 
 if __name__ == "__main__":
 
