@@ -3,14 +3,10 @@ from products import Product
 from orders import Order
 from take_purchase import take_purchase
 from display_products import display_products
+from display_product import display_product
 import json
 
 if __name__ == '__main__':
-
-    def display_product(product):
-        """Display a product function"""
-        print("Name: Cost:")
-        print(f"{product.name.title()} £{product.cost}")
 
     my_product = Product("alice in wonderland", Decimal("10.00"), "children's book")
     hobbit = Product("the hobbit", Decimal("9.99"), "fantasy adventure")
@@ -40,8 +36,8 @@ if __name__ == '__main__':
     print("HERE ARE THE PRODUCTS")
     print(display_products(loaded_products))
 
-    display_product(my_product)
-    display_product(hobbit)
+    print(display_product(my_product))
+    print(display_product(hobbit))
 
     print(display_products(books))
 
