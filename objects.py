@@ -4,6 +4,7 @@ from orders import Order
 from take_purchase import take_purchase
 from display_products import display_products
 from display_product import display_product
+from display_order import display_order
 import json
 
 if __name__ == '__main__':
@@ -49,17 +50,10 @@ if __name__ == "__main__":
     print("The total cost of my first order...")
     first_order.total_cost()
 
-    def display_order(order):
-        """display an order function"""
-        print("Product Name: Cost: Quantity:")
-        print(f"{order.product_name.title()} £{order.cost} {order.qty}")
-        total = order.total_cost()
-        print(f"Your total cost is: £{total}")
-
     #my_order = Order(f"{my_product.name.title()}", f"{my_product.cost}", "2")
 
     print("\nMy first order:\n")
-    display_order(first_order)
+    print(display_order(first_order))
 
     def display_orders(orders):
         """display many orders function"""
@@ -96,8 +90,8 @@ if __name__ == "__main__":
     print("MY NEW ORDERS")
     display_orders(loaded_orders)
 
-    display_order(my_order)
-    display_order(another_order)
+    print(display_order(my_order))
+    print(display_order(another_order))
 
     display_orders(orders_list)
 
