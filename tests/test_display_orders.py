@@ -15,6 +15,4 @@ class TestDisplayOrders(TestCase):
             Your total cost is: £29.97
             """).rstrip()
 
-        self.assertEqual(1,1)
-
-        print(display_orders(order_list))
+        self.assertEqual(display,expected_display)

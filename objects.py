@@ -5,6 +5,7 @@ from take_purchase import take_purchase
 from display_products import display_products
 from display_product import display_product
 from display_order import display_order
+from display_orders import display_orders
 import json
 
 if __name__ == '__main__':
@@ -55,14 +56,6 @@ if __name__ == "__main__":
     print("\nMy first order:\n")
     print(display_order(first_order))
 
-    def display_orders(orders):
-        """display many orders function"""
-        print("Product Name: Cost: Quantity:")
-        for order in orders:
-            print(f"{order.product_name.title()} £{order.cost} {order.qty}")
-            total = order.total_cost()
-            print(f"Your total cost is: £{total}")
-
     my_order = Order("the hobbit", Decimal("9.99"), 3)
     another_order = Order("alice in wonderland", Decimal("10.00"), 2)
     orders_list = [my_order, another_order, first_order]
@@ -88,12 +81,12 @@ if __name__ == "__main__":
 
     loaded_orders = load_orders_from_json()
     print("MY NEW ORDERS")
-    display_orders(loaded_orders)
+    print(display_orders(loaded_orders))
 
     print(display_order(my_order))
     print(display_order(another_order))
 
-    display_orders(orders_list)
+    print(display_orders(orders_list))
 
     print("\nTotal:\n")
     print(f"£{my_order.total_cost()}")
