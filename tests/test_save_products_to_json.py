@@ -13,8 +13,7 @@ class SaveProductsToJson(TestCase):
 
         save_products_to_json(product_list)
 
-        expected_data = dedent("""\
-        [
+        expected_data = [
          {
           "name": "alice in wonderland",
           "cost": "10.00",
@@ -26,7 +25,6 @@ class SaveProductsToJson(TestCase):
           "description": "fantasy adventure"
          }
         ]
-        """).rstrip()
 
         with open("product_data.json") as pdata:
-            self.assertEqual(pdata.read(), expected_data)
+            self.assertEqual(json.load(pdata), expected_data)
