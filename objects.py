@@ -15,7 +15,10 @@ if __name__ == '__main__':
     hobbit = Product("the hobbit", Decimal("9.99"), "fantasy adventure")
     books = [my_product, hobbit]
 
-    save_products_to_json(books)
+    output = dump_products_to_json(products)
+    filename = 'product_data.json'
+    with open(filename, 'w') as pd:
+        pd.write(output)
 
     def load_products_from_json(filename = 'product_data.json'):
         with open(filename) as pdf:
