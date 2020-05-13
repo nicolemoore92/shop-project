@@ -7,7 +7,7 @@ from display_product import display_product
 from display_order import display_order
 from display_orders import display_orders
 from save_products_to_json import dump_products_to_json
-from save_orders_to_json import save_orders_to_json
+from save_orders_to_json import dump_orders_to_json
 import json
 
 if __name__ == '__main__':
@@ -59,8 +59,10 @@ if __name__ == "__main__":
     orders_list = [my_order, another_order]
     orders2 = [my_order, another_order, first_order]
 
-    print("Saving orders to JSON file:\n")
-    print(dump_orders_to_json(orders_list))
+    order_output = dump_orders_to_json(orders2)
+    filename = 'order_data.json'
+    with open(filename, 'w') as od:
+        od.write(order_output)
 
 
     def load_orders_from_json(filename = 'order_data.json'):

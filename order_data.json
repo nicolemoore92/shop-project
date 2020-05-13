@@ -8,5 +8,10 @@
   "product name": "alice in wonderland",
   "cost": "10.00",
   "quantity": 2
+ },
+ {
+  "product name": "alice in wonderland",
+  "cost": "10.00",
+  "quantity": 2
  }
 ]
