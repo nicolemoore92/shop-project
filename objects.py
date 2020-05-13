@@ -6,7 +6,7 @@ from display_products import display_products
 from display_product import display_product
 from display_order import display_order
 from display_orders import display_orders
-from save_products_to_json import save_products_to_json
+from save_products_to_json import dump_products_to_json
 import json
 
 if __name__ == '__main__':
@@ -14,6 +14,7 @@ if __name__ == '__main__':
     my_product = Product("alice in wonderland", Decimal("10.00"), "children's book")
     hobbit = Product("the hobbit", Decimal("9.99"), "fantasy adventure")
     books = [my_product, hobbit]
+    products = [my_product, hobbit]
 
     output = dump_products_to_json(products)
     filename = 'product_data.json'
@@ -55,14 +56,6 @@ if __name__ == "__main__":
     my_order = Order("the hobbit", Decimal("9.99"), 3)
     another_order = Order("alice in wonderland", Decimal("10.00"), 2)
     orders_list = [my_order, another_order, first_order]
-
-    def save_orders_to_json(orders, filename = 'order_data.json'):
-        order_dicts = []
-        for order in orders:
-            order_dict = {'product name': order.product_name, 'cost': str(order.cost), 'quantity': order.qty}
-            order_dicts.append(order_dict)
-        with open(filename, 'w') as od:
-            json.dump(order_dicts, od, indent=1)
 
     save_orders_to_json(orders_list)
 
